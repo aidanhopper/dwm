@@ -10,7 +10,6 @@ static const unsigned int gappoh    = gapsize;       /* horiz outer gap between 
 static const unsigned int gappov    = gapsize;       /* vert outer gap between windows and screen edge */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const int user_bh            = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=16" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=15";
 
@@ -43,7 +42,7 @@ static const char *colors[][3]      = {
 
 
 /* tagging */
-static const char *tags[] = { "DEV", "WWW", "DOC", "CHAT", "(G)" };
+static const char *tags[] = { "  ", "  ", "  ", " ﭮ ", "  ", "  " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -61,9 +60,7 @@ static const Rule rules[] = {
 	{ "Lutris",      		   NULL,       		NULL,       	        1 << 4,       0,           -1 },
 	{ "Steam",    	  		 NULL,       		NULL,       	        1 << 4,       0,           -1 },
 	{ "Zathura", 	  		   NULL,       		NULL,       	        1 << 2,       0,           -1 },
-	{ "Spotify", 	  		   NULL,          NULL,           	    1 << 2,       0,           -1 },
-	{ NULL,     	  		   "spotify",     NULL,           	    1 << 2,       0,           -1 },
-	{ NULL,     	  		   NULL,          "Spotify",      	    1 << 2,       0,           -1 },
+	{ NULL,     	  		   NULL,          "Spotify",           	1 << 5,       0,           -1 },
 };
 
 /* layout(s) */
