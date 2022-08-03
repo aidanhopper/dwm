@@ -109,6 +109,7 @@ static const char *webcmd[]        = { BROWSER, NULL };
 static const char *screenshotcmd[] = { "scrot", NULL };
 
 #include <X11/XF86keysym.h>
+#include "shift-tools.c"
 
 static Key keys[] = {
 	/* modifier                     key             function        argument */
@@ -116,13 +117,21 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, 	spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      	spawn,          {.v = webcmd } },
 	{ MODKEY|ShiftMask,             XK_o,      	spawn,          {.v = screenshotcmd } },
+	{ MODKEY,                       XK_o, shiftviewclients,    { .i = +1 } },
+	{ MODKEY|ShiftMask,             XK_o,	shiftview,         { .i = +1 } },
+	{ MODKEY|ShiftMask,             XK_i,	shiftview,         { .i = -1 } },
+	{ MODKEY,	                      XK_i, shiftviewclients,    { .i = -1 } },
 	{ MODKEY,                       XK_p,      	togglebar,      {0} },
 	{ MODKEY,                       XK_j,      	focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      	focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      	incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      	incnmaster,     {.i = -1 } },
+	{ MODKEY|ControlMask,                       XK_i,      	incnmaster,     {.i = +1 } },
+	{ MODKEY|ControlMask,                       XK_d,      	incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      	setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      	setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,		XK_h,      shiftboth,      { .i = -1 }	},
+	{ MODKEY|ControlMask,		XK_h,      shiftswaptags,  { .i = -1 }	},
+	{ MODKEY|ControlMask,		XK_l,      shiftswaptags,  { .i = +1 }	},
+	{ MODKEY|ShiftMask,             XK_l,      shiftboth,      { .i = +1 }	},
 	{ MODKEY,                       XK_n,      	zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    	view,           {0} },
 	{ MODKEY,                       XK_q,      	killclient,     {0} },
@@ -137,6 +146,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, 	focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  	tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, 	tagmon,         {.i = +1 } },
+	{ MODKEY, XK_v,                 spawn,		 SHCMD("$HOME/.local/bin/powermenu") }, 
+	{ 0, XF86XK_AudioMute,		      spawn,		 SHCMD("pamixer -t; pkill -RTMIN+10 dwmblocks") }, 
 	{ 0, XF86XK_AudioMute,		      spawn,		 SHCMD("pamixer -t; pkill -RTMIN+10 dwmblocks") }, 
 	{ 0, XF86XK_AudioRaiseVolume,	  spawn,		 SHCMD("pamixer -i 3; pkill -RTMIN+10 dwmblocks") },
 	{ 0, XF86XK_AudioLowerVolume,	  spawn,	   SHCMD("pamixer -d 3; pkill -RTMIN+10 dwmblocks") },
