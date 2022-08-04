@@ -1859,11 +1859,18 @@ sigstatusbar(const Arg *arg)
 
 	if (!statussig)
 		return;
-	sv.sival_int = arg->i;
+	// sv.sival_int = arg->i;
 	if ((statuspid = getstatusbarpid()) <= 0)
 		return;
 
-	sigqueue(statuspid, SIGRTMIN+statussig, sv);
+	// sigqueue(statuspid, SIGRTMIN+statussig, sv);
+  sv.sival_int = (statussig << 8) | arg->i;
+	if (sigqueue(statuspid, SIGUSR1, sv) == -1) {
+		if (errno == ESRCH) {
+			if (!getstatusbarpid())
+				sigqueue(statuspid, SIGUSR1, sv);
+		}
+	}
 }
 
 void

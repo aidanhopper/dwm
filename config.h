@@ -3,6 +3,7 @@ static const char BROWSER[] = "firefox";
 // #include "/home/aidan/.cache/wal/colors-wal-dwm.h"
 /* appearance */
 
+// #define CLICKABLE_BLOCKS
 static unsigned int borderpx  = 3;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
 static int showbar            = 1;        /* 0 means no bar */
@@ -148,7 +149,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, 	tagmon,         {.i = +1 } },
 	{ MODKEY, XK_v,                 spawn,		 SHCMD("$HOME/.local/bin/powermenu") }, 
 	{ 0, XF86XK_AudioMute,		      spawn,		 SHCMD("pamixer -t; pkill -RTMIN+10 dwmblocks") }, 
-	{ 0, XF86XK_AudioMute,		      spawn,		 SHCMD("pamixer -t; pkill -RTMIN+10 dwmblocks") }, 
 	{ 0, XF86XK_AudioRaiseVolume,	  spawn,		 SHCMD("pamixer -i 3; pkill -RTMIN+10 dwmblocks") },
 	{ 0, XF86XK_AudioLowerVolume,	  spawn,	   SHCMD("pamixer -d 3; pkill -RTMIN+10 dwmblocks") },
 	TAGKEYS(                        XK_1,                      0)
@@ -159,7 +159,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8) { MODKEY|ShiftMask,             XK_q,           quit,           {0} },
+	TAGKEYS(                        XK_9,                      8) 
+  { MODKEY|ShiftMask,             XK_q,           quit,           {0} },
 };
 
 /* button definitions */
