@@ -37,8 +37,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
-		// { "font",               STRING,  &font },
-		// { "dmenufont",          STRING,  &font },
+		{ "font",               STRING,  &font },
+		{ "font",          STRING,  &dmenufont },
 		{ "color0",        STRING,  &normbgcolor },
 		{ "color0",    STRING,  &normbordercolor },
 		{ "color7",        STRING,  &normfgcolor },
