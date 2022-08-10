@@ -66,16 +66,14 @@ static const Rule rules[] = {
 	 */
 	/* class          		 instance    		title       	        tags mask     isfloating   monitor */
 	{ "Gimp",         		 NULL,       		NULL,       	        1 << 2,       0,           -1 },
-	{ "Firefox",                NULL,          NULL,       	        1 << 1,       0,           -1 },
+	{ "Firefox",           NULL,          NULL,       	        1 << 1,       0,           -1 },
 	{ "discord",      		 NULL,       		NULL,       	        1 << 3,       0,           -1 },
-	{ "libreoffice", 		   NULL,          NULL,       	        1 << 2,       0,           -1 },
-	{ NULL,  			         "libreoffice", NULL,       	        1 << 2,       0,           -1 },
-	{ NULL,  			         NULL, 			    "LibreOffice",        1 << 2,       0,           -1 },
+	{ "libreoffice", 		   "libreoffice", "LibreOffice",       	1 << 2,       0,           -1 },
 	{ "obs",      	  		 NULL,       		NULL,       	        1 << 4,       0,           -1 },
 	{ "Lutris",      		   NULL,       		NULL,       	        1 << 4,       0,           -1 },
 	{ "Steam",    	  		 NULL,       		NULL,       	        1 << 4,       0,           -1 },
 	{ "Zathura", 	  		   NULL,       		NULL,       	        1 << 2,       0,           -1 },
-	{ "Spotify",     	  		   NULL,          "Spotify",           	1 << 5,       0,           -1 },
+	{ "Spotify",     	  	 NULL,          "Spotify",           	1 << 5,       0,           -1 },
 };
 
 /* layout(s) */
