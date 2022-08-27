@@ -1,7 +1,6 @@
 static const char BROWSER[] = "firefox";
 /* See LICENSE file for copyright and license details. */ 
-// #include "/home/aidan/.cache/wal/colors-wal-dwm.h"
-/* appearance */
+// #include "/home/aidan/.cache/wal/colors-wal-dwm.h" appearance */
 
 // #define CLICKABLE_BLOCKS
 static unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -64,16 +63,17 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class          		 instance    		title       	        tags mask     isfloating   monitor */
-	{ "Gimp",         		 NULL,       		NULL,       	        1 << 2,       0,           -1 },
-	{ "Firefox",           NULL,          NULL,       	        1 << 1,       0,           -1 },
-	{ "discord",      		 NULL,       		NULL,       	        1 << 3,       0,           -1 },
-	{ "libreoffice", 		   "libreoffice", "LibreOffice",       	1 << 2,       0,           -1 },
-	{ "obs",      	  		 NULL,       		NULL,       	        1 << 4,       0,           -1 },
-	{ "Lutris",      		   NULL,       		NULL,       	        1 << 4,       0,           -1 },
-	{ "Steam",    	  		 NULL,       		NULL,       	        1 << 4,       0,           -1 },
-	{ "Zathura", 	  		   NULL,       		NULL,       	        1 << 2,       0,           -1 },
-	{ "Spotify",     	  	 NULL,          "Spotify",           	1 << 5,       0,           -1 },
+	/* class         instance       title          tags mask  isfloating  center  monitor */
+	{ "Gimp",        NULL,       		NULL,       	 1 << 2, 0, 0, -1 },
+	{ "Firefox",     NULL,          NULL,       	 1 << 1, 0, 0, -1 },
+	{ "discord",     NULL,       		NULL,       	 1 << 3, 0, 0, -1 },
+	{ "libreoffice", "libreoffice", "LibreOffice", 1 << 2, 0, 0, -1 },
+	{ "obs",      	 NULL,       		NULL,       	 1 << 4, 0, 0, -1 },
+	{ "Lutris",      NULL,       		NULL,       	 1 << 4, 0, 0, -1 },
+	{ "Steam",    	 NULL,       		NULL,       	 1 << 4, 0, 0, -1 },
+	{ "Zathura", 	   NULL,       		NULL,       	 1 << 2, 0, 0, -1 },
+	{ "Spotify",     "spotify",     "Spotify",     1 << 5, 0, 1, -1 },
+	{ "St",       	 "st",       		"st",       	 0,      0, 1, -1 },
 };
 
 /* layout(s) */
